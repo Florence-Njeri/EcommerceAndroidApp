@@ -9,7 +9,7 @@
     tools:context=".auth.SignUpFragment">
 
     <TextView
-        android:id="@+id/textLogIn"
+        android:id="@+id/textForgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLogIn">
+        app:layout_constraintTop_toBottomOf="@+id/textForgotPassword">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="text_forgot_password">Please, enter your email address. You will receive a link to create a new password via email.</string>
 </resources>
