@@ -30,5 +30,22 @@
         <action
             android:id="@+id/action_signUpFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_signUpFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.ecommerceandroidapp.auth.LogInFragment"
+        android:label="LogInFragment"
+        tools:layout="@layout/log_in_fragment">
+        <action
+            android:id="@+id/action_logInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.ecommerceandroidapp.auth.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/forgot_password_fragment"/>
 </navigation>
