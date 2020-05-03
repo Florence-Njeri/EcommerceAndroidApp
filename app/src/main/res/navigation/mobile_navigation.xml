@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/signUpFragment">
+    app:startDestination="@+id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.ecommerceandroidapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_shop"
+        android:name="com.example.ecommerceandroidapp.ui.shop.ShopFragment"
+        android:label="@string/title_shop"
+        tools:layout="@layout/fragment_shop" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.ecommerceandroidapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_bag"
+        android:name="com.example.ecommerceandroidapp.ui.bag.BagFragment"
+        android:label="@string/title_bag"
+        tools:layout="@layout/fragment_bag" />
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.ecommerceandroidapp.auth.SignUpFragment"
@@ -48,4 +48,14 @@
         android:name="com.example.ecommerceandroidapp.auth.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/forgot_password_fragment"/>
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.ecommerceandroidapp.ui.favourites.FavouritesFragment"
+        android:label="@string/title_favourites"
+        tools:layout="@layout/favourites_fragment" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.ecommerceandroidapp.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/profile_fragment" />
 </navigation>
