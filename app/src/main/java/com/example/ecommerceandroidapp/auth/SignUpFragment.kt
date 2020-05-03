@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -35,15 +36,16 @@ class SignUpFragment : Fragment(), AuthListener {
     }
 
     override fun onStarted() {
-        TODO("Not yet implemented")
+        binding.progressBar.visibility=View.VISIBLE
     }
 
     override fun onSuccess() {
-        TODO("Not yet implemented")
+        binding.progressBar.visibility=View.GONE
     }
 
     override fun onFailure(message: String) {
-        TODO("Not yet implemented")
+        binding.progressBar.visibility=View.GONE
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
     }
 
 }
