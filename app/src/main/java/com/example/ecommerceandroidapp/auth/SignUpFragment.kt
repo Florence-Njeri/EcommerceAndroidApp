@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.ecommerceandroidapp.R
 import com.example.ecommerceandroidapp.databinding.SignUpFragmentBinding
 
-class SignUpFragment : Fragment() {
+class SignUpFragment : Fragment(), AuthListener {
     private lateinit var binding: SignUpFragmentBinding
 
     companion object {
@@ -32,6 +32,18 @@ class SignUpFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(AuthViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onStarted() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onSuccess() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onFailure(message: String) {
+        TODO("Not yet implemented")
     }
 
 }
