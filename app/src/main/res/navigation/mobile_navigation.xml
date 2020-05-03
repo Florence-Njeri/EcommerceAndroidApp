@@ -9,7 +9,14 @@
         android:id="@+id/navigation_home"
         android:name="com.example.ecommerceandroidapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_shop"
@@ -42,6 +49,9 @@
         <action
             android:id="@+id/action_logInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"

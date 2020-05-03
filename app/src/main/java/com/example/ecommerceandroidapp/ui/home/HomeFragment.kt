@@ -1,5 +1,6 @@
 package com.example.ecommerceandroidapp.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.ecommerceandroidapp.R
 
 class HomeFragment : Fragment() {
@@ -26,6 +28,20 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        val sharedPreference = requireContext().getSharedPreferences("PREFERENCE_NAME", Context.MODE_PRIVATE)
+        val isFirstTime =sharedPreference.getBoolean("isFirstTime",true)
+        val isAuthenticated =sharedPreference.getBoolean("isFirstTime",true)
+
+
+        if(isFirstTime){
+            findNavController().navigate(R.id.action_navigation_home_to_signUpFragment)
+        }
+
+        if(!isAuthenticated && !isFirstTime){
+            findNavController().navigate(R.id.action_navigation_home_to_logInFragment)
+        }
+
         return root
     }
 }
