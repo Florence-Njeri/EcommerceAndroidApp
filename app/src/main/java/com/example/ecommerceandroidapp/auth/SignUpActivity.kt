@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.example.ecommerceandroidapp.MainActivity
 import com.example.ecommerceandroidapp.R
 import com.example.ecommerceandroidapp.databinding.ActivitySignUpBinding
@@ -15,9 +16,15 @@ import com.google.firebase.auth.FirebaseAuth
 class SignUpActivity : AppCompatActivity(), AuthListener {
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var viewModel: AuthViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel=ViewModelProviders.of(this).get(AuthViewModel::class.java)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
+
+        binding.viewModel= viewModel
+        viewModel.authListener = this
 
         auth = FirebaseAuth.getInstance()
         binding.imageView.setOnClickListener {
