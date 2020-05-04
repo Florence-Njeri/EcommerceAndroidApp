@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.example.ecommerceandroidapp.auth.AuthViewModel" />
 
     </data>
 
@@ -15,14 +18,14 @@
         tools:context=".auth.SignUpFragment">
 
         <TextView
-            android:id="@+id/textForgotPassword"
+            android:id="@+id/textSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="Login"
+            android:text="Sign Up"
             android:textColor="@color/blackText"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -30,6 +33,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewName"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:cardElevation="16dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSignUp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:text="@{viewModel.name}"
+                    android:textColorHint="@color/greyText"
+                    android:textColor="@color/blackTextEditText"
+                    android:layout_gravity="center_vertical"
+                    android:inputType="textPersonName"
+                    android:hint="Name" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewEmail"
@@ -43,8 +86,8 @@
             app:cardElevation="16dp"
             app:cardCornerRadius="4dp"
             app:layout_constraintEnd_toEndOf="@+id/cardViewName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textForgotPassword">
+            app:layout_constraintStart_toStartOf="@+id/cardViewName"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewName">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,6 +107,7 @@
                     android:ems="10"
                     android:textColor="@color/blackTextEditText"
                     android:hint="Email"
+                    android:text="@{viewModel.email}"
                     android:inputType="textEmailAddress" />
             </LinearLayout>
 
@@ -102,6 +146,7 @@
                     android:textColor="@color/blackTextEditText"
                     android:layout_gravity="center_vertical"
                     android:background="@null"
+                    android:text="@{viewModel.password}"
                     android:inputType="textPassword" />
             </LinearLayout>
 
@@ -143,14 +188,14 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/red_button_rounded_corners"
-            android:text="Log In"
+            android:text="Sign Up"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:onClick="@{()->viewModel.signUpWithGoogle()}"/>
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -158,7 +203,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:text="or log in with social account"
+            android:text="or Sign Up with social account"
             android:textColor="@color/blackText"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"

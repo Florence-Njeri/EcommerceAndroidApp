@@ -9,14 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.ecommerceandroidapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_logInFragment"
-            app:destination="@id/logInFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_shop"
@@ -29,30 +22,6 @@
         android:name="com.example.ecommerceandroidapp.ui.bag.BagFragment"
         android:label="@string/title_bag"
         tools:layout="@layout/fragment_bag" />
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.ecommerceandroidapp.auth.SignUpFragment"
-        android:label="Sign Up"
-        tools:layout="@layout/sign_up_fragment" >
-        <action
-            android:id="@+id/action_signUpFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
-        <action
-            android:id="@+id/action_signUpFragment_to_logInFragment"
-            app:destination="@id/logInFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/logInFragment"
-        android:name="com.example.ecommerceandroidapp.auth.LogInFragment"
-        android:label="LogInFragment"
-        tools:layout="@layout/log_in_fragment">
-        <action
-            android:id="@+id/action_logInFragment_to_forgotPasswordFragment"
-            app:destination="@id/forgotPasswordFragment" />
-        <action
-            android:id="@+id/action_logInFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
-    </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.ecommerceandroidapp.auth.ForgotPasswordFragment"
@@ -68,4 +37,14 @@
         android:name="com.example.ecommerceandroidapp.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/profile_fragment" />
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="com.example.ecommerceandroidapp.auth.SignUpActivity"
+        android:label="SignUp"
+        tools:layout="@layout/activity_sign_up"/>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.ecommerceandroidapp.auth.LogInFragment"
+        android:label="LogIn"
+        tools:layout="@layout/activity_log_in"/>
 </navigation>
