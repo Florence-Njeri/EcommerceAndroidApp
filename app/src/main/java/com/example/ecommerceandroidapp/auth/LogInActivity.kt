@@ -35,6 +35,7 @@ class LogInActivity : AppCompatActivity(), AuthListener {
         binding.imageView.setOnClickListener {
 
             //Navigate to forgot password screen
+            startActivity(Intent(this,ForgotPasswordActivity::class.java))
 
         }
 
