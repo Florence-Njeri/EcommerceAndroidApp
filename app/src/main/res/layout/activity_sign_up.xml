@@ -13,8 +13,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
         android:layout_margin="0dp"
+        android:background="@color/backgroundColor"
         tools:context=".auth.SignUpFragment">
 
         <TextView
@@ -43,8 +43,8 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="16dp"
             app:cardCornerRadius="4dp"
+            app:cardElevation="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textSignUp">
@@ -58,18 +58,18 @@
                     android:id="@+id/editTextName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:background="@null"
                     android:ems="10"
-                    android:text="@{viewModel.name}"
-                    android:textColorHint="@color/greyText"
-                    android:textColor="@color/blackTextEditText"
-                    android:layout_gravity="center_vertical"
+                    android:hint="Name"
                     android:inputType="textPersonName"
-                    android:hint="Name" />
+                    android:text="@{viewModel.name}"
+                    android:textColor="@color/blackTextEditText"
+                    android:textColorHint="@color/greyText" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -83,8 +83,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="16dp"
             app:cardCornerRadius="4dp"
+            app:cardElevation="16dp"
             app:layout_constraintEnd_toEndOf="@+id/cardViewName"
             app:layout_constraintStart_toStartOf="@+id/cardViewName"
             app:layout_constraintTop_toBottomOf="@+id/cardViewName">
@@ -105,10 +105,10 @@
                     android:layout_marginRight="16dp"
                     android:background="@null"
                     android:ems="10"
-                    android:textColor="@color/blackTextEditText"
                     android:hint="Email"
+                    android:inputType="textEmailAddress"
                     android:text="@{viewModel.email}"
-                    android:inputType="textEmailAddress" />
+                    android:textColor="@color/blackTextEditText" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -122,8 +122,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="16dp"
             app:cardCornerRadius="4dp"
+            app:cardElevation="16dp"
             app:layout_constraintEnd_toEndOf="@+id/cardViewEmail"
             app:layout_constraintStart_toStartOf="@+id/cardViewEmail"
             app:layout_constraintTop_toBottomOf="@+id/cardViewEmail">
@@ -137,17 +137,17 @@
                     android:id="@+id/editTextPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
+                    android:background="@null"
                     android:ems="10"
                     android:hint="Password"
-                    android:textColor="@color/blackTextEditText"
-                    android:layout_gravity="center_vertical"
-                    android:background="@null"
+                    android:inputType="textPassword"
                     android:text="@{viewModel.password}"
-                    android:inputType="textPassword" />
+                    android:textColor="@color/blackTextEditText" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -188,12 +188,12 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/red_button_rounded_corners"
+            android:onClick="@{()->viewModel.signUpWithGoogle()}"
             android:text="Sign Up"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:onClick="@{()->viewModel.signUpWithGoogle()}"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -202,11 +202,11 @@
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:text="or Sign Up with social account"
             android:textColor="@color/blackText"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintBottom_toTopOf="@+id/googleSignInButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -239,7 +239,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView2" />
+            app:layout_constraintStart_toEndOf="@+id/googleSignInButton" />
 
         <ProgressBar
             android:id="@+id/progressBar"

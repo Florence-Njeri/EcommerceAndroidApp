@@ -15,7 +15,6 @@ import com.example.ecommerceandroidapp.databinding.ActivityLogInBinding
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class LogInActivity : AppCompatActivity(), AuthListener {
     private lateinit var binding: ActivityLogInBinding
@@ -39,7 +38,7 @@ class LogInActivity : AppCompatActivity(), AuthListener {
 
         }
 
-        googleSignInButton.setOnClickListener {
+        binding.googleLogInButton.setOnClickListener {
             signInWithGoogle()
         }
     }
