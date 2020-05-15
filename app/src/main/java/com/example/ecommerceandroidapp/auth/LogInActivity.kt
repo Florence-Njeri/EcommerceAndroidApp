@@ -42,6 +42,7 @@ class LogInActivity : AppCompatActivity(), AuthListener {
         binding.googleLogInButton.setOnClickListener {
             signInWithGoogle()
         }
+
     }
 
     private fun signInWithGoogle() {

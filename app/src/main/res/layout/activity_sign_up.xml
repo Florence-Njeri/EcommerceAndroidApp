@@ -54,22 +54,41 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editTextName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@null"
-                    android:ems="10"
-                    android:hint="Name"
-                    android:inputType="textPersonName"
-                    android:text="@{viewModel.name}"
-                    android:textColor="@color/blackTextEditText"
-                    android:textColorHint="@color/greyText" />
+                   >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="11dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:hint="Name"
+                        android:textSize="@dimen/editTextSize"
+                        android:inputType="textPersonName"
+                        android:text="@={viewModel.name}"
+                        android:textColor="@color/blackTextEditText"
+                        android:textColorHint="@color/greyText" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/image_validator"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@{viewModel.isValidName() ? @drawable/outline_check :@drawable/outline_wrong_email}"
+                    tools:src="@drawable/outline_wrong_email"
+                    />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -94,21 +113,39 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editTextEmail"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="11dp"
+                        android:background="@null"
+                        android:textSize="@dimen/editTextSize"
+                        android:ems="10"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.email}"
+                        android:textColor="@color/blackTextEditText" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/email_image_validator"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@null"
-                    android:ems="10"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:text="@{viewModel.email}"
-                    android:textColor="@color/blackTextEditText" />
+                    android:src="@{viewModel.isValidEmail() ? @drawable/outline_check :@drawable/outline_wrong_email}"
+                    tools:src="@drawable/outline_wrong_email"
+                    />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -133,21 +170,31 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/editTextPassword"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@null"
-                    android:ems="10"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:text="@{viewModel.password}"
-                    android:textColor="@color/blackTextEditText" />
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="11dp"
+                        android:background="@null"
+                        android:textSize="@dimen/editTextSize"
+                        android:ems="10"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.password}"
+                        android:textColor="@color/blackTextEditText" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
